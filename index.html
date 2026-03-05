@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recreated Fashion Homepage V1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Icons&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1a1a1a",
+                        "background-light": "#fdf8f4",
+                        "background-dark": "#121212",
+                        accent: "#e5cfc3",
+                        "muted-rose": "#d4b8b1",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .material-icons { font-size: 20px; }
+        .hero-bg { background-color: #f2e1d9; }
+        .dark .hero-bg { background-color: #1e1b1a; }
+        .product-card img { transition: transform 0.5s ease; }
+        .product-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-primary dark:text-gray-100 font-sans transition-colors duration-300">
+<div class="bg-primary text-white py-2 px-6 text-[10px] uppercase tracking-[0.2em] flex justify-between items-center">
+<span>Free Shipping on Orders Over $150</span>
+<div class="flex gap-4">
+<a class="hover:opacity-70" href="#">Follow Us</a>
+<div class="flex gap-2">
+<span class="material-icons text-[14px]">facebook</span>
+<span class="material-icons text-[14px]">camera_alt</span>
+</div>
+</div>
+</div>
+<nav class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-black/5 dark:border-white/5 py-6 px-10">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex-1 flex gap-8 text-xs font-semibold uppercase tracking-widest">
+<a class="hover:text-muted-rose transition-colors" href="#">Home</a>
+<a class="hover:text-muted-rose transition-colors" href="#">Shop</a>
+<a class="hover:text-muted-rose transition-colors" href="#">Style</a>
+<a class="hover:text-muted-rose transition-colors" href="#">About</a>
+</div>
+<div class="flex-1 text-center">
+<h1 class="font-display text-3xl font-bold tracking-tight">WOMEN'S</h1>
+<p class="text-[8px] uppercase tracking-[0.4em] opacity-60">Couture &amp; Style</p>
+</div>
+<div class="flex-1 flex justify-end items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="bg-transparent border-b border-black/20 dark:border-white/20 px-2 py-1 text-xs focus:outline-none focus:border-primary dark:focus:border-white" placeholder="Search" type="text"/>
+</div>
+<button class="material-icons hover:opacity-60">person_outline</button>
+<button class="material-icons hover:opacity-60">favorite_border</button>
+<div class="relative">
+<button class="material-icons hover:opacity-60">shopping_bag</button>
+<span class="absolute -top-1 -right-1 bg-muted-rose text-[8px] text-white rounded-full w-4 h-4 flex items-center justify-center">2</span>
+</div>
+</div>
+</div>
+</nav>
+<section class="hero-bg relative min-h-[85vh] flex items-center overflow-hidden">
+<div class="max-w-7xl mx-auto px-10 w-full grid grid-cols-12 items-center">
+<div class="col-span-5 z-10 hero-text-animate">
+<span class="text-xs uppercase tracking-[0.5em] opacity-60 mb-4 block">New Collection 2024</span>
+<h2 class="font-display text-8xl leading-[0.9] mb-8">Elevate Your <br/><span class="italic font-normal">Style!</span></h2>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-neutral-800 transition-all">Shop Now</button>
+<button class="border border-primary px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">View Catalog</button>
+</div>
+</div>
+<div class="col-span-7 relative">
+<img alt="High fashion model portrait" class="w-full h-auto object-cover hero-image-animate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4_htilF0dLEfX9JS1QE9H5DmvIg5Uh5GzyEiCNIc9sfqOIgvymb0nRrwhcarkj8FWrt-4TJXgIae_3J4BFU7ts20UkYTBQoIQIWgoM7-hW-JwjYgSeYSJ5Y1qlIFqhBxY2p8hnI85v286i5klSoSEb3t8BmdGtcScpHBH6912PfSuUY242-XQBAdWWOp9eAjCmGkGhsUcyUcRUJmfFDEvE48d7fOh3asH45ZkJAcC2CSRmrH4TPAHTBbfHPcaEHKhYAMqEu_8BJ0"/>
+</div>
+</div>
+<div class="absolute bottom-10 left-10 flex flex-col items-center gap-4 opacity-40">
+<div class="h-16 w-[1px] bg-primary"></div>
+<span class="text-[10px] uppercase tracking-widest vertical-rl rotate-180">Scroll</span>
+</div>
+</section>
+<section class="py-24 px-10 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h3 class="text-2xl font-display uppercase tracking-widest mb-2">Casual Wear</h3>
+<div class="h-[1px] w-20 bg-muted-rose mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 casual-grid">
+<div class="product-card">
+<div class="aspect-[3/4] overflow-hidden mb-4 bg-accent/20">
+<img alt="Casual Jumpsuit" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAiB1ZgyF40bfw1CqjRpqA6g1u-7ISIQboKRKtmwWb6aGqYbEq5c4pP1uQz3pFoZVRQZNLDcu7-SxXyJTBppQvmfT8FvLsiF6oB1dlf1GLqBXtLxv5YCs-HelfMMbPlaXD35Q3_zjtxA3vlt1eGV1-6aCyGJhVA1cAWht-4tLmO0Lh6c2rYKLS9cWJsfrFpEAnKacZtK4r_9wljegsL9E14woxFuGQHyhrp4joIWHyoOSArdJK1xqX31MccxRiXYL5YfmrMWRDRUE"/>
+</div>
+<div class="text-center">
+<h4 class="font-display text-lg mb-1">Casual Wear</h4>
+<p class="text-[10px] uppercase tracking-wider opacity-50 mb-2">Essential Collection</p>
+<p class="text-sm font-semibold">$129.00</p>
+</div>
+</div>
+<div class="product-card">
+<div class="aspect-[3/4] overflow-hidden mb-4 bg-accent/20">
+<img alt="Elegant Dress" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYNGmosdjo6qiXOaUz_IhQoIWxkCBnrukqbdKRUYbwwpEAP8ZTDjNt6isto_M5F9BqhrvluB-Bv-xg_wQEI9JAVjVW4VKjRtNbTpqn2565SaHFkTF9cbLFJGPQ3qHZ_KW6loSUbDxWWbnSJkJfxIFCn8UjHeEUOH0ol16wAyDYz_plHoLJSpzcHmoAftSlyrpsH2toxl2HHO81HrXzrlW2oTI4LFGzvO_qmy2_NYfoPAjZnlHcuOuwkcM_dlHYFvZQZZ3AwC2acQU"/>
+</div>
+<div class="text-center">
+<h4 class="font-display text-lg mb-1">Elegant Dress</h4>
+<p class="text-[10px] uppercase tracking-wider opacity-50 mb-2">Evening Wear</p>
+<p class="text-sm font-semibold">$249.00</p>
+</div>
+</div>
+<div class="product-card">
+<div class="aspect-[3/4] overflow-hidden mb-4 bg-accent/20">
+<img alt="Silk Gown" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApIQr2YUHU1h8ovS1RgK1xW0XXOxeGtuiXaf5vol_uVVvhDvCXqR7D6REz3WFLYl9KpPL0TlLULgA_5TkGcroXb5gAji3vyL7OVDoQ5XqE5vNsEqmWf2YoquhoooQCXVFUufdppFFGLocfto_sAV3Thyt1OFVEsD25OIq3s88Lp-D71rX4C6VNv7zwow-AaOL6WhPy8BZX1VjKTGYYsreYyJN7THgPP8KBexqO16UplhYmMa7EliPLLpmn-1grLXildTM84XePyvw"/>
+</div>
+<div class="text-center">
+<h4 class="font-display text-lg mb-1">Silk Gown</h4>
+<p class="text-[10px] uppercase tracking-wider opacity-50 mb-2">Luxury Line</p>
+<p class="text-sm font-semibold">$389.00</p>
+</div>
+</div>
+<div class="product-card">
+<div class="aspect-[3/4] overflow-hidden mb-4 bg-accent/20">
+<img alt="Workwear" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCruYaeqphpNzGf8fGiUYj0xOJjBZ0f7RLWk_UuvVEwzy5D_rtGoAjaGOc0ZdWoHizJYkIgzvFJEQvsSvLavrdwFWnhRmy4Qqw-JbagCq5M90Z-xaDhK_iKJB2uAZKjGuk2xV_P62VjCPCgKA1hgYrnOh7SGLOoCxFwN8JEehfYvXN7ZCtQRqPj4dw-AC0SKR9oC_cGbd44NhlutNWNrgE3zF8H-oSEBbdykJuUR5xvCbXk_ONUtlmb1DldKvL4fkJ7pDuxGmqH5xo"/>
+</div>
+<div class="text-center">
+<h4 class="font-display text-lg mb-1">Workwear</h4>
+<p class="text-[10px] uppercase tracking-wider opacity-50 mb-2">Modern Career</p>
+<p class="text-sm font-semibold">$189.00</p>
+</div>
+</div>
+<div class="product-card">
+<div class="aspect-[3/4] overflow-hidden mb-4 bg-accent/20">
+<img alt="Season Trends" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQQg_IkQ_d86uDiGov-y8U2yA7qZek6XLtXLgawcsHtkh26I0ERS9cJ8K6mcd-1ylFlFuBV_jWSqWC7IlNyNfbvyf-brwNsQtnwtjq-MWOKq2i16KLcPEVOMGvV-HTnC9f4WrxTGarPTexbV3UGKWXqq_L77PRkxKvKIbCKppN-VK4ItbU4rtP2zMS6sd0rxxqx_KubPJvTr-S9pdpv5kOjePK6KuNsvc3KBbxFgBIUykKuVf6gbnIajvKzKxctOjOoSWsJfKI_yA"/>
+</div>
+<div class="text-center">
+<h4 class="font-display text-lg mb-1">Season Trends</h4>
+<p class="text-[10px] uppercase tracking-wider opacity-50 mb-2">Curated Set</p>
+<p class="text-sm font-semibold">$159.00</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="h-[500px] bg-muted-rose/20 flex items-center justify-center p-12 overflow-hidden">
+<img alt="Collection Preview" class="w-full h-full object-cover spring-banner-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi8ZAoaM_mB8tIQ2IDJwWu1at1LiZ-unojLLtdSjhxRqlcuNRN_XOXVsYGPymQV8f9AqphWR1N2VIpaMDsc8Y1qU6D8NHA_xMHwz0p60R5TfyfrlD1R9Rg8ICAy06oZLp_7X68jkeWngM6bx6rgqa6123JFbG0QwCA1YwabAY5vDnAFxzz5KTt4i9L4wH4yCUvN_B9hexNoKDqEo2oDqbILpw1xrQON9pc9Cmm_EnLlMnJn-wtqvEIiqfnnD4eTrJJv9uSMujdo4I"/>
+</div>
+<div class="bg-accent/30 dark:bg-neutral-900/50 flex flex-col justify-center p-20">
+<h3 class="font-display text-5xl mb-4">Spring Collection</h3>
+<p class="text-6xl font-bold mb-8 text-muted-rose">30% OFF</p>
+<button class="bg-primary text-white w-fit px-12 py-4 text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform">Shop Now</button>
+</div>
+</div>
+</section>
+<section class="py-24 px-10 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h3 class="text-2xl font-display uppercase tracking-widest mb-2">Customer Trends</h3>
+<div class="h-[1px] w-20 bg-muted-rose mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 trends-grid">
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 rounded">
+<img alt="Trend" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5i-J2kvf1qmjQo4s1w5YVW8rpzk58hy--eUJATPB0cLC6l203ZwFb_Kr8-8dbVS6gKs04U2f8shQb2jHEYZjxVK2poCUxcD_wYR12uH5LCjhWGS8gvX9oxzv372QF7TV5aIQbmQrywvXi00rdibkHe5v9S92Dprbc0pbjCKqqGXxpW5-T2lEFTEoFpiNzvI3rsj_3qoi7ovjkAb5Uoa4Um6DpdNEN2z-QziAInqdHnmjjkKiEltVDNytTX5nxzTJbwjfB6b-EpKU"/>
+</div>
+<h5 class="text-xs font-bold tracking-widest uppercase mb-1">Saul Mem</h5>
+<div class="flex justify-center gap-1 mb-2">
+<div class="w-2 h-2 rounded-full bg-blue-500"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+</div>
+<p class="text-[10px] opacity-60">Spring Casual</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 rounded">
+<img alt="Trend" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMB0yCBa-r-YPakH6dHeGzWsed46jhtdVMy0FKwg4gyQupPVtv4UN62FceQ0ZEelnl-Ddf-nBceMlIkQoxmdGPcVKR7LXMvD1SaI9Ja_yQVVX9Q2p8XAfy9khM_6RSrTR8hrRE7k5IZm3mUZlcfozvRuji8BfDkm1xiow7FiBCGXGm76bjX86HAE76mrQlG_weVun08SYrZhsJd5EfTFRvKuCuHCnkvlTRFHZvC1xMpqOVgzMuXV-0uwJICY5TAN2UJvL77BDW21Q"/>
+</div>
+<h5 class="text-xs font-bold tracking-widest uppercase mb-1">Send Loarda</h5>
+<div class="flex justify-center gap-1 mb-2">
+<div class="w-2 h-2 rounded-full bg-orange-500"></div>
+<div class="w-2 h-2 rounded-full bg-gray-400"></div>
+</div>
+<p class="text-[10px] opacity-60">Boho Chic</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 rounded">
+<img alt="Trend" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsvNIck4jETiSZH1QV5yd2pkwPYjtNHAtIMit3xEa_cAp1UYNLyS1zytSKKUFT6btB_TfsszJuu7A8jjt-LV2CLekFqsgnWFCK-suldBW69Coammv5SJGw6w7VML_6jBEZ605JgYtwIylqypL8uraARPGnr2oEoR00vAbcDyG8IObb0LcjRfW4lb5M1G1xiuQc_1sv9G2-lo__cuIihW6C1Nszn5uM6ghRsv5YkTBrXsjyOYNS7_FvvRzJIfqG-meE4-Av1NmgToI"/>
+</div>
+<h5 class="text-xs font-bold tracking-widest uppercase mb-1">Mirei Peet</h5>
+<div class="flex justify-center gap-1 mb-2">
+<div class="w-2 h-2 rounded-full bg-black"></div>
+<div class="w-2 h-2 rounded-full bg-white border border-gray-200"></div>
+</div>
+<p class="text-[10px] opacity-60">Minimalist</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 rounded">
+<img alt="Trend" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9nTzm_0EOt5o8qKBMOyJWEX7LfTyztZHf69CZsEobE5NJBTd-s5apdcGlSl2yTXo4jx8zM9QVmx8X-d5kZAkaBQg6DCFDR8ESUM2W5v20Aim4AnFm4FVu5gggu7bVd9BcWsflytINABxeAJWtstI4VaCgLQ0vk1x-5aDGT65lBpynaW528N66-Ji645EeW9NIxRg9r7ESJaX2huxvh_Jcx9P0dX9rg4SgRPhv_V6E1AUdeJvyr78v4_PNEs1PzaXRdPUBcs1mpiM"/>
+</div>
+<h5 class="text-xs font-bold tracking-widest uppercase mb-1">Soton Hetes</h5>
+<div class="flex justify-center gap-1 mb-2">
+<div class="w-2 h-2 rounded-full bg-pink-300"></div>
+<div class="w-2 h-2 rounded-full bg-beige-200 bg-neutral-200"></div>
+</div>
+<p class="text-[10px] opacity-60">Pastels</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 rounded">
+<img alt="Trend" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABPgK5ionBduqLZ9RBbWaYbDt7jYNS5qw9DyqYyoagcD881o_iST4O6CBvFxowdWKhK6BcwBvXE6fEifYdThGNY9V5XpD5Gq7cHim2ZQOYETcpBeJE8KSsXzylR1stQcZvp74N6qQHv0xds9BdQUlDqEh2R5rY0KEBMAkSQRTuE6oTPRfj37u-GCVYtFB4Bjhy01f42SbHUd3GpxRFWZRRGAn5TeEkEJ65z72VDG-P8-gBBGBohWZGRTyXF2PzAfj-CeiAhy5YVug"/>
+</div>
+<h5 class="text-xs font-bold tracking-widest uppercase mb-1">Sote Syhis</h5>
+<div class="flex justify-center gap-1 mb-2">
+<div class="w-2 h-2 rounded-full bg-green-800"></div>
+</div>
+<p class="text-[10px] opacity-60">Classic Fit</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-4 rounded">
+<img alt="Trend" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFuFrFnBLUd9Gf_UcOSk2F854QyrP6Llt2uPLiPgUHAXxLgfzLw2NSoVi-guksH2fm8AXEm8Bq3cVmf_PztygT5AF146n9Pw1VE2ODXrzQJVL1_h4LPBgCpbAuZvJWeSsndtfTWWr98kUJoYFhzmeM9aL3V8R_y4ZovceKUWF9kI0-LNo7GJIaKoIMhMNUGhFNzLWmoqzy1HEILSFkEm0Va9hp6uZuyz8yZR0n_EnERjhgB-0kyBLWW3wLvwCkX1d-N_8l3X59b_A"/>
+</div>
+<h5 class="text-xs font-bold tracking-widest uppercase mb-1">Sean Ode</h5>
+<div class="flex justify-center gap-1 mb-2">
+<div class="w-2 h-2 rounded-full bg-gray-500"></div>
+</div>
+<p class="text-[10px] opacity-60">Urban Wear</p>
+</div>
+</div>
+</section>
+<section class="bg-muted-rose py-20 px-10">
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+<h4 class="font-display text-4xl text-white mb-6">Join Our Community</h4>
+<p class="text-white/80 max-w-xl mb-10">Stay updated with the latest trends, exclusive collections, and member-only rewards.</p>
+<div class="flex w-full max-w-md">
+<input class="flex-grow bg-white/10 border border-white/30 text-white placeholder-white/60 px-6 py-4 focus:outline-none focus:bg-white/20 rounded-l" placeholder="Your email address" type="email"/>
+<button class="bg-white text-primary px-8 py-4 font-bold uppercase text-[10px] tracking-widest rounded-r">Subscribe</button>
+</div>
+</div>
+</section>
+<footer class="py-16 px-10 border-t border-black/5 dark:border-white/5 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<h1 class="font-display text-2xl font-bold mb-6">WOMEN'S</h1>
+<p class="text-sm opacity-60 mb-6">Defining luxury fashion since 2010. Quality craftsmanship and timeless design are at our core.</p>
+<div class="flex gap-4">
+<span class="material-icons opacity-40 hover:opacity-100 cursor-pointer">facebook</span>
+<span class="material-icons opacity-40 hover:opacity-100 cursor-pointer">camera_alt</span>
+<span class="material-icons opacity-40 hover:opacity-100 cursor-pointer">alternate_email</span>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest mb-6">Collections</h5>
+<ul class="space-y-3 text-sm opacity-60">
+<li><a class="hover:opacity-100" href="#">Spring/Summer</a></li>
+<li><a class="hover:opacity-100" href="#">Fall/Winter</a></li>
+<li><a class="hover:opacity-100" href="#">The Essentials</a></li>
+<li><a class="hover:opacity-100" href="#">New Arrivals</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest mb-6">Customer Service</h5>
+<ul class="space-y-3 text-sm opacity-60">
+<li><a class="hover:opacity-100" href="#">Shipping Policy</a></li>
+<li><a class="hover:opacity-100" href="#">Returns &amp; Exchanges</a></li>
+<li><a class="hover:opacity-100" href="#">Sizing Guide</a></li>
+<li><a class="hover:opacity-100" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-xs uppercase tracking-widest mb-6">Newsletter</h5>
+<p class="text-sm opacity-60 mb-4">Subscribe for the latest updates and exclusive offers.</p>
+<div class="flex items-center gap-2">
+<button class="bg-primary/5 dark:bg-white/5 p-2 rounded flex items-center gap-2 text-xs uppercase tracking-widest font-semibold hover:bg-primary/10 dark:hover:bg-white/10 transition-colors" id="themeToggle">
+<span class="material-icons">dark_mode</span>
+                        Toggle Dark
+                    8</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto border-t border-black/5 dark:border-white/5 mt-16 pt-8 text-[10px] uppercase tracking-widest opacity-40 flex justify-between">
+<span>© 2024 WOMEN'S Fashion. All Rights Reserved.</span>
+<div class="flex gap-6">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Use</a>
+</div>
+</div>
+</footer>
+<script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        // Hero Entrance
+        gsap.from(".hero-text-animate > *", {
+            duration: 1.2,
+            y: 60,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power4.out"
+        });
+        gsap.from(".hero-image-animate", {
+            duration: 1.5,
+            x: 100,
+            opacity: 0,
+            ease: "power3.out"
+        });
+        // Staggered Entrance for Casual Wear Cards
+        gsap.from(".casual-grid .product-card", {
+            scrollTrigger: {
+                trigger: ".casual-grid",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out"
+        });
+        // Banner Image Parallax-like effect
+        gsap.from(".spring-banner-img", {
+            scrollTrigger: {
+                trigger: ".spring-banner-img",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            },
+            scale: 1.2
+        });
+        // Trends Grid staggered
+        gsap.from(".trends-grid .group", {
+            scrollTrigger: {
+                trigger: ".trends-grid",
+                start: "top 85%",
+            },
+            scale: 0.9,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.05,
+            ease: "back.out(1.7)"
+        });
+        // Dark Mode Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            themeToggle.querySelector('.material-icons').innerText = isDark ? 'light_mode' : 'dark_mode';
+        });
+        // Set default theme if needed
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Uncomment to default to system theme
+            // document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>
